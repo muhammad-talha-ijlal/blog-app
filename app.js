@@ -28,11 +28,10 @@ app.use(express.static("public"));
 
 app.get("/",(req, res)=>{
 
-  //Post.find({}, function (err, docs) {
-    //res.render("home",{content : homeStartingContent, posts: docs})
-    //posts = docs
-  //})
-  res.send("Hooooooooooo")
+  Post.find({}, function (err, docs) {
+    res.render("home",{content : homeStartingContent, posts: docs})
+    posts = docs
+  })
 })
 
 app.get("/about",(req, res)=>{
