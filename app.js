@@ -28,10 +28,11 @@ app.use(express.static("public"));
 
 app.get("/",(req, res)=>{
 
-  Post.find({}, function (err, docs) {
-    res.render("home",{content : homeStartingContent, posts: docs})
-    posts = docs
-  })
+  //Post.find({}, function (err, docs) {
+    //res.render("home",{content : homeStartingContent, posts: docs})
+    //posts = docs
+  //})
+  res.send("Hooooooooooo")
 })
 
 app.get("/about",(req, res)=>{
@@ -64,11 +65,4 @@ app.post("/compose", (req, res)=>{
 })
 
 
-
-
-
-
-
-
-
-app.listen(process.env.PORT, function() {});
+app.listen(process.env.PORT);
